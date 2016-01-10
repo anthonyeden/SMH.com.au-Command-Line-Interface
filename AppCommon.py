@@ -21,7 +21,7 @@ def renderTopBar(stdscr):
     
     height, width = stdscr.getmaxyx()
     
-    authorTag = "(C) 1989-2015 Archaic Software Associates"
+    authorTag = "(C) 2016 Archaic Software Associates"
     
     OBJ_TOPBAR = curses.newwin(1, width, 0, 0)
     OBJ_TOPBAR.bkgd(1, curses.color_pair(2))
