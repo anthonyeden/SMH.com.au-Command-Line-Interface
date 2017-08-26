@@ -11,7 +11,7 @@ def fetchArticleIndex():
     
     opener = urllib2.build_opener()
     opener.addheaders = [('User-agent', 'SMH-Terminal-App-v1')]
-    pageData = opener.open("http://beta.smh.com.au").read()
+    pageData = opener.open("http://www.smh.com.au").read()
     soup = BeautifulSoup(pageData)
 
     headlines = soup('h3', {'class': 'story__headline'})
@@ -19,7 +19,7 @@ def fetchArticleIndex():
     articles = []
 
     for x in headlines:
-        if x('a')[0].string is not None and x('a')[0]['href'].encode("utf-8").strip()[:22] == "http://beta.smh.com.au":
+        if x('a')[0].string is not None and x('a')[0]['href'].encode("utf-8").strip()[:21] == "http://www.smh.com.au":
             articles.append({
                 "title": x('a')[0].string.encode("utf-8").strip(),
                 "url": x('a')[0]['href'].encode("utf-8").strip()
